@@ -33,11 +33,8 @@ jobs:
         run: |
           npx expo export --platform web
 
-      # Android build requires credentials to be set up first
-      # Run locally once: eas build --platform android
-      # Then uncomment this step:
-      # - name: Build and deploy Android
-      #   run: |
-      #     eas build --platform android --non-interactive --auto-submit
-      #   env:
-      #     EXPO_PROJECT_ID: ${{ secrets.EXPO_PROJECT_ID }}
+      - name: Build Android
+        run: |
+          eas build --platform android --non-interactive
+        env:
+          EXPO_PROJECT_ID: ${{ secrets.EXPO_PROJECT_ID }}
