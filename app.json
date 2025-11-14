@@ -43,6 +43,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7b15a826-231b-41a8-b3ba-0612c01e01a5"
+      }
+    },
+    "owner": "hallmedia"
   }
 }
