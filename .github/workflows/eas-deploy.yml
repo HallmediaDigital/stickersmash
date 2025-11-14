@@ -29,11 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and deploy web
+      - name: Build web
         run: |
-          eas build --platform web --non-interactive --auto-submit
-        env:
-          EXPO_PROJECT_ID: ${{ secrets.EXPO_PROJECT_ID }}
+          npx expo export --platform web
 
       - name: Build and deploy Android
         run: |
