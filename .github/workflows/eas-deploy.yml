@@ -29,10 +29,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build web
+      # ---- WEB ----
+      - name: Build Web
         run: |
           npx expo export --platform web
 
+      - name: Deploy Web to EAS Hosting
+        run: |
+          eas deploy --platform web --non-interactive
+        env:
+          EXPO_PROJECT_ID: ${{ secrets.EXPO_PROJECT_ID }}
+
+      # ---- ANDROID ----
       - name: Build Android
         run: |
           eas build --platform android --non-interactive
